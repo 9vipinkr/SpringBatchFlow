@@ -45,8 +45,13 @@ public class LastFlow {
 	}
 	
 	@Bean
+<<<<<<< Upstream, based on branch 'master' of https://github.com/9vipinkr/SpringBatchFlow.git
 	public Job lastFlowJob2(@Qualifier("flowsample") Flow flowsample) {
 		return jobBuilderFactory.get("lastFlowJob2") 
+=======
+	public Job lastFlowJob1(@Qualifier("flowsample") Flow flowsample) {
+		return jobBuilderFactory.get("lastFlowJob1") 
+>>>>>>> 59ec986 Add another job local
 				.start(myStepLastFlow())
 			    .on("COMPLETED").to(flowsample)
 			    .end()				
