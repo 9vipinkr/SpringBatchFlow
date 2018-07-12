@@ -43,4 +43,13 @@ public class LastFlow {
 			    .end()				
 			    .build();
 	}
+	
+	@Bean
+	public Job lastFlowJob2(@Qualifier("flowsample") Flow flowsample) {
+		return jobBuilderFactory.get("lastFlowJob2") 
+				.start(myStepLastFlow())
+			    .on("COMPLETED").to(flowsample)
+			    .end()				
+			    .build();
+	}
 }
